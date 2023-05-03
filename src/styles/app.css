@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+	.gradient-theme {
+		background: radial-gradient(
+			circle at 50% 50%,
+			#0b1329,
+			#0a1227,
+			#0a1226,
+			#091124,
+			#081023,
+			#081021,
+			#070f1f,
+			#070e1e,
+			#060d1c,
+			#060d1b,
+			#050c19
+		);
+	}
+	.blur-bg {
+		@apply bg-gray-800 backdrop-filter backdrop-blur-lg bg-opacity-40;
+	}
+}
