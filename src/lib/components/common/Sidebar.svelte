@@ -16,7 +16,7 @@
 				class={'w-[48px] aspect-square hover:bg-theme-primary grid place-items-center rounded-full'}
 			>
 				<a
-					href={item.href}
+					href={item.link}
 					class="cursor-pointer text-theme-muted hover:text-theme-light grid place-items-center w-full h-full"
 				>
 					<Icon icon={item.icon} class="w-7 h-7" />

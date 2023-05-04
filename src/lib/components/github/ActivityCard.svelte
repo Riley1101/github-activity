@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import Icon from '@iconify/svelte';
 	let data = [1, 2, 3, 4];
 </script>
@@ -16,7 +16,7 @@
 		</div>
 	</div>
 	<div class="p-4 md:p-6 flex flex-col">
-		{#each data as item}
+		{#each data as _}
 			<fieldset class="my-4 flex gap-4 border rounded-lg p-4 border-gray-900 cursor-pointer">
 				<legend class=" border border-gray-900 gap-4 px-4 rounded-full p-2 flex items-center">
 					<Icon

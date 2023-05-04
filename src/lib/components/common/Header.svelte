@@ -18,7 +18,7 @@
 			<li
 				class="cursor-pointer hover:text-theme-accent px-4 hover:text-white py-2 hover:bg-theme-primary rounded-full flex items-center"
 			>
-				<a href={item.href}>{item.name}</a>
+				<a href={item.link}>{item.name}</a>
 			</li>
 		{/each}
 	</ul>
