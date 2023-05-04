@@ -5,11 +5,9 @@
 </script>
 
 <div
-	class="w-full h-screen gradient-theme font-mono flex flex-col md:grid grid-cols-[5em_auto] grid-rows-[6em_auto]"
+	class="w-full overflow-hidden h-screen gradient-theme font-mono flex flex-col md:grid grid-cols-[5em_auto] grid-rows-[6em_auto]"
 >
 	<Header />
 	<Sidebar />
-	<div class="w-full h-full overflow-y-auto">
-		<slot />
-	</div>
+	<slot />
 </div>

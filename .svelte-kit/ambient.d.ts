@@ -37,6 +37,7 @@ declare module '$env/static/private' {
 	export const NODE: string;
 	export const npm_package_devDependencies_tslib: string;
 	export const npm_package_devDependencies_autoprefixer: string;
+	export const npm_package_dependencies_moment: string;
 	export const npm_package_devDependencies_tailwindcss: string;
 	export const npm_package_scripts_check_watch: string;
 	export const FIG_SET_PARENT_CHECK: string;
@@ -171,6 +172,7 @@ declare module '$env/dynamic/private' {
 		NODE: string;
 		npm_package_devDependencies_tslib: string;
 		npm_package_devDependencies_autoprefixer: string;
+		npm_package_dependencies_moment: string;
 		npm_package_devDependencies_tailwindcss: string;
 		npm_package_scripts_check_watch: string;
 		FIG_SET_PARENT_CHECK: string;

@@ -3,23 +3,51 @@
 @tailwind utilities;
 
 @layer utilities {
-	.gradient-theme {
-		background: radial-gradient(
-			circle at 50% 50%,
-			#0b1329,
-			#0a1227,
-			#0a1226,
-			#091124,
-			#081023,
-			#081021,
-			#070f1f,
-			#070e1e,
-			#060d1c,
-			#060d1b,
-			#050c19
-		);
-	}
-	.blur-bg {
-		@apply bg-gray-800 backdrop-filter backdrop-blur-lg bg-opacity-40;
-	}
+  .gradient-theme {
+    background: radial-gradient(
+      circle at 50% 50%,
+      #0b1329,
+      #0a1227,
+      #0a1226,
+      #091124,
+      #081023,
+      #081021,
+      #070f1f,
+      #070e1e,
+      #060d1c,
+      #060d1b,
+      #050c19
+    );
+  }
+  .blur-bg {
+    @apply bg-gray-800 backdrop-filter backdrop-blur-lg bg-opacity-40;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  /* Works on Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #f056c71a #88ced309;
+  }
+
+  /* Works on Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #88ced309;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #f056c71a;
+    border-radius: 20px;
+    border: 3px solid #88ced309;
+  }
 }

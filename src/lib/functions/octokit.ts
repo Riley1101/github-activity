@@ -1,4 +1,4 @@
-import type { PublicEventData } from "$lib/types/github";
+import type { PublicEventData, Repositories ,CommitData} from "$lib/types/github";
 
 const headers = {
   Accept: "application/vnd.github.v3+json",
@@ -10,7 +10,7 @@ async function getUserRepositories(
   username: string,
   per_page: number = 30,
   page: number = 1
-): Promise<any> {
+): Promise<Repositories[]> {
   return await fetch(
     `https://api.github.com/users/${username}/repos?per_page=${per_page}&page=${page}`,
     {
@@ -23,9 +23,21 @@ async function getUserEvents(
   per_page: number = 30,
   page: number = 30
 ): Promise<PublicEventData> {
-  return await fetch(`https://api.github.com/users/${username}/events/public?page=${page}`, {
-    headers,
-  }).then((response) => response.json());
+  return await fetch(
+    `https://api.github.com/users/${username}/events/public?page=${page}`,
+    {
+      headers,
+    }
+  ).then((response) => response.json());
 }
 
-export { getUserEvents, getUserRepositories };
+async function getRepoCommits(repo: string, ): Promise<CommitData[] > {
+  return await fetch(
+    `https://api.github.com/repos/${repo}/commits`,
+    {
+      headers,
+    }
+  ).then(res=>res.json());
+}
+
+export { getUserEvents, getUserRepositories ,getRepoCommits};

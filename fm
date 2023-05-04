@@ -2,16 +2,17 @@
     import CommitCard from "$lib/components/github/CommitCard.svelte";
     import ActivityCard from "$lib/components/github/ActivityCard.svelte";
     import { getRepoCommits } from "$lib/functions/octokit";
-    import type { CommitData } from "$lib/types/github/commits";
+    import type { CommitData } from "$lib/types/github";
     import type { PageData } from "./$types";
     export let data: PageData;
-    let commit_data: CommitData[] = [];
     let { user_repos } = data;
-    async function loadCommits(name: string) {
-        let commits = await getRepoCommits(name);
-
-        console.log(commits)
-        commit_data = commits;
+    let name = "Riley1101";
+    let commit_data: Promise<CommitData[]>;
+    async function loadCommits(index: string) {
+        console.log(name);
+        name = index;
+        commit_data = getRepoCommits(name);
+        console.log(commit_data);
     }
 </script>
 
@@ -28,8 +29,17 @@
     <div
         class="p-4 w-full h-full flex flex-col gap-2 overflow-y-auto max-h-[850px] scrollbar-hide border border-gray-800 rounded-md"
     >
-        {#each commit_data as commit}
-            <CommitCard {commit} />
-        {/each}
+        {name}
+        {#await commit_data}
+            <p>waiting for the promise to resolve...</p>
+        {:then value}
+                <div>
+                {#each value as commit}
+                    <p>{console.log(value,"value")}</p> 
+                {/each}
+                </div>
+        {:catch error}
+            <p>Something went wrong: {error.message}</p>
+        {/await}
     </div>
 </div>

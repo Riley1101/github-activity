@@ -39,7 +39,7 @@ export interface PullRequest {
   merged_at: string;
   merge_commit_sha: string;
 }
-export interface Commit {
+export interface Cmits {
   sha: string;
   author: { email: string; name: string };
   message: string;
@@ -53,7 +53,7 @@ export interface PushEventPayLoad {
   ref: string;
   head: string;
   before: string;
-  commits: Commit[];
+  commits: Cmits[];
 }
 
 export interface CreateEventPayload {

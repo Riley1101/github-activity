@@ -12,6 +12,7 @@ specifiers:
   eslint-config-prettier: ^8.5.0
   eslint-plugin-svelte: ^2.26.0
   isomorphic-fetch: ^3.0.0
+  moment: ^2.29.4
   postcss: ^8.4.23
   prettier: ^2.8.0
   prettier-plugin-svelte: ^2.8.1
@@ -26,6 +27,7 @@ specifiers:
 dependencies:
   dotenv: 16.0.3
   isomorphic-fetch: 3.0.0
+  moment: 2.29.4
 
 devDependencies:
   '@iconify/svelte': 3.1.3_svelte@3.58.0
@@ -1465,6 +1467,10 @@ packages:
     dependencies:
       minimist: 1.2.8
     dev: true
+
+  /moment/2.29.4:
+    resolution: {integrity: sha512-5LC9SOxjSc2HF6vO2CyuTDNivEdoz2IvyJJGj6X8DJ0eFyfszE0QiEd+iXmBvUP3WHxSjFH/vIsA0EN00cgr8w==}
+    dev: false
 
   /mri/1.2.0:
     resolution: {integrity: sha512-tzzskb3bG8LvYGFF/mDTpq3jpI6Q9wc3LEmBaghu+DdCssd1FakN7Bc0hVNmEyGq1bq3RgfkCb3cmQLpNPOroA==}
